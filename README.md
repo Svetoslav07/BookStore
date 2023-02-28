@@ -1,2 +1,1 @@
-# BookStore
-Boris Serafimov PU project
+# UniWebApp

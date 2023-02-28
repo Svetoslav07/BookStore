@@ -1,30 +1,25 @@
-﻿using BookStore.Models.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using BookStore.Models.Models;
 
 namespace BookStore.DL.InMemoryDb
 {
-    public static class InMemoryDb
-    {
-        public static List<Author> Authors = new List<Author>()
-        {
-            new Author()
-         {
-            ID = 1,
-            Name = "Pesho"
+	public static class InMemoryDb
+	{
+		public static List<Author> Authors = new List<Author>()
+		{
+			new Author()
+			{
+				Id = 1,
+				Name = "Denkata"
+			},
 
-         },
-            new Author()
-         {
-            ID= 2 ,
-            Name = "Stamat"
+			new Author()
+			{
+				Id = 2,
+				Name = "Peshkata"
+			}
+		};
 
-         }
+	}
+}
 
-        };
-
-        public static object InMemoryDb { get; internal set; }
-    }

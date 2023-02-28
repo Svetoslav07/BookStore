@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BookStore.Models.Base
+namespace BookStore.Models.Models
 {
-    internal class Person
-    {
-        public int ID { get; set; }
-        public string Name { get; set; }    
-    }
+	public class Person
+	{
+		public int Id { get; set; }
+		public string Name { get; set; }
+	}
 }
+
