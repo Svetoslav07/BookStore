@@ -1,4 +1,5 @@
-﻿using BookStore.BL.Interfaces;
+﻿using AutoMapper;
+using BookStore.BL.Interfaces;
 using BookStore.DL.Interfaces;
 using BookStore.Models.Models;
 using BookStore.Models.Requests;
@@ -8,6 +9,7 @@ namespace BookStore.BL.Services
     public class AuthorService : IAuthorService
     {
         private readonly IAuthorRepository _authorRepository;
+        private readonly IMapper _mapper;
 
         public AuthorService(IAuthorRepository authorRepository)
         {
@@ -18,11 +20,9 @@ namespace BookStore.BL.Services
         {
             // automapper
             //_authorRepository.Add(authorRequest);
-            _authorRepository.Add(new Author()
-            {
-                Name = authorRequest.Name,
-                Bio = authorRequest.Bio
-            });
+            var author = _mapper.Map<Author>(authorRequest);
+
+            _authorRepository.Add(author);
         }
 
         public void Delete(int id)
@@ -41,10 +41,13 @@ namespace BookStore.BL.Services
             return _authorRepository.GetById(id);
         }
 
-        public void Update(Author author)
+        public void Update(UpdateAuthorRequest author)
         {
+            var author = _mapper.Map<Author>(UpdateAuthorRequest);
             _authorRepository.Update(author);
         }
+
+        
     }
 }
 

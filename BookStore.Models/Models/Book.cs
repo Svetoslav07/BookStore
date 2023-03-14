@@ -7,5 +7,7 @@
 
         //public int AuthorId { get; set; }
 
+        public int RelaseDate { get; set; }
+
     }
 }

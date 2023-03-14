@@ -38,7 +38,7 @@ public class AuthorController : ControllerBase
     }
 
     [HttpPut("Update")]
-    public void Update([FromBody] Author author)
+    public void Update([FromBody] Author author) 
     {
         _authorService.Update(author);
     }

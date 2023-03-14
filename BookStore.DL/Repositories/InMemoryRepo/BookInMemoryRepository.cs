@@ -26,6 +26,11 @@ namespace BookStore.DL.Repositories.InMemoryRepo
             return InMemoryDb.Data.Books;
         }
 
+        public IEnumerable<Book> GetAllByAuthorId(int authorId)
+        {
+            return InMemoryDb.Data.Books.Where(book => book.Id == authorId);
+        }
+
         public Book GetById(int id)
         {
             return InMemoryDb.Data.Books.FirstOrDefault(i => i.Id == id);
@@ -41,5 +46,7 @@ namespace BookStore.DL.Repositories.InMemoryRepo
                 bookToUpdate.Name = book.Name;
             }
         }
+
+
     }
 }
